@@ -11,8 +11,8 @@ UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 def get_db_connection():
-	if os.path.isfile('/home/elg0rd0/database.db'):
-		conn = sqlite3.connect('/home/elg0rd0/database.db')
+	if os.path.isfile('/home/elg0rd0/flask_lottery/database.db'):
+		conn = sqlite3.connect('/home/elg0rd0/flask_lottery/database.db')
 		print ("running on pyanywhere", file=sys.stderr)
 	else:
 		conn = sqlite3.connect('database.db')
