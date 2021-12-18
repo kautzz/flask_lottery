@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Bisherige Einreichungen {% endblock %}</h1>
+    {% for post in posts %}
+        <a href="{{ url_for('post', post_code=post['code']) }}">
+            <h2>{{ post['country'] }} - {{ post['city'] }}</h2>
+        </a>
+        <span class="badge badge-danger">{{ post['code'] }}</span>
+        <span class="badge badge-success">{{ post['name'] }}</span>
+        <span class="badge badge-secondary">{{ post['created'] }}</span>
+        <a href="{{ url_for('edit', code=post['code']) }}">
+            <span class="badge badge-warning">Bearbeiten</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}

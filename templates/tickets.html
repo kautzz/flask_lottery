@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Tickets {% endblock %}</h1>
+    {% for ticket in tickets %}
+        <span class="badge badge-danger">{{ ticket['ticket_id'] }}</span>
+        {% if ticket['valid'] == 1 %}
+          <span class="badge badge-success">{{ ticket['valid'] }}</span>
+        {% else %}
+          <span class="badge badge-warning">{{ ticket['valid'] }}</span>
+        {% endif %}
+
+        <span class="badge badge-secondary">{{ ticket['created'] }}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}

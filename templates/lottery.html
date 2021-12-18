@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Auslosung {% endblock %}</h1>
+    <a href="{{ url_for('post', post_code=win['code']) }}">
+      <h2><span class="badge badge-danger">{{ win['code'] }}</span> <span class="badge badge-success">{{ win['name'] }}</span></h2>
+    </a>
+    <hr>
+{% endblock %}
