@@ -11,7 +11,12 @@ UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 def get_db_connection():
-	conn = sqlite3.connect('database.db')
+	if os.path.isfile('/home/elg0rd0/database.db'):
+		conn = sqlite3.connect('/home/elg0rd0/database.db')
+		print ("running on pyanywhere", file=sys.stderr)
+	else:
+		conn = sqlite3.connect('database.db')
+		print ("running locally", file=sys.stderr)
 	conn.row_factory = sqlite3.Row
 	return conn
 
