@@ -43,6 +43,7 @@ h1 {
 
 #finalimg {
   display: block;
+  padding-bottom: 1px;
 }
 
 #counter {
@@ -55,7 +56,7 @@ h1 {
 
 #count {
   /* background: lightgrey; */
-  height: 16.5em;
+
 }
 
 #winner {
