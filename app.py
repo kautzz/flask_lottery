@@ -215,11 +215,17 @@ def delete(code):
 def lottery():
 	conn = get_db_connection()
 	posts = conn.execute('SELECT * FROM posts').fetchall()
-	conn.close()
 
 	winner = randrange(len(posts))
 	win = posts[winner]
+	code = win[2]
+
+	images = conn.execute('SELECT * FROM images WHERE code = ?', (code,))
+
+
 	print(win[3], file=sys.stderr)
+	print(code, file=sys.stderr)
+	conn.commit()
 
 
-	return render_template('lottery.html', win=win)
+	return render_template('lottery.html', win=win, images=images)

@@ -1,6 +1,67 @@
 h1 {
-    border: 2px #eee solid;
-    color: brown;
-    text-align: center;
+    border: none;
+    color: grey;
+    text-align: left;
     padding: 10px;
+}
+
+/* Lottery Page Styles */
+.icon {
+  margin-right: 8px;
+}
+
+.countdown {
+  font-family: 'Muli', sans-serif;
+  line-height: 1;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 270px;
+  height: 225px;
+  margin-bottom: 3em;
+  margin: auto;
+  width: 50%;
+  /* padding: 10px; */
+  text-align: center;
+}
+
+.numbers {
+  font-family: 'Muli', sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  transition: 0.3s ease transform;
+  text-indent: 0;
+  font-size: 225px;
+  padding-right: 100px;
+}
+
+.reset {
+  align: center;
+}
+
+#finalimg {
+  display: block;
+}
+
+#counter {
+  visibility: hidden;
+}
+
+#countdown_hidden {
+  display:none;
+}
+
+#count {
+  /* background: lightgrey; */
+  height: 250px;
+}
+
+#winner {
+  display:none;
+}
+
+#countbtn {
+  display: 'block'
 }

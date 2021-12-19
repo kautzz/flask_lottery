@@ -2,8 +2,64 @@
 
 {% block content %}
     <h1>{% block title %} Auslosung {% endblock %}</h1>
-    <a href="{{ url_for('post', post_code=win['code']) }}">
-      <h2><span class="badge badge-danger">{{ win['code'] }}</span> <span class="badge badge-success">{{ win['name'] }}</span></h2>
-    </a>
-    <hr>
+
+    <div class="row">
+      <div class="col-sm-6" id="countbtn">
+        <div class="card">
+
+          <div id="count">
+            <img class="card-img-top" id="finalimg" src="static/images/thelights.gif" alt="Card image cap">
+
+            <span class="countdown" id="counter">
+              <span class="numbers">
+                <span style="color: #ff0000;">...</span>
+                <span style="color: #ff0000;">9</span>
+                <span style="color: #ffa200;">8</span>
+                <span style="color: #bfff00;">7</span>
+                <span style="color: #1eff00;">6</span>
+                <span style="color: #00ff80;">5</span>
+                <span style="color: #00ddff;">4</span>
+                <span style="color: #0040ff;">3</span>
+                <span style="color: #6200ff;">2</span>
+                <span style="color: #ff00ff;">1</span>
+                <span>🎄</span>
+              </span>
+
+            </span>
+
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Ist es schon soweit?</h5>
+            <p class="card-text">
+              Ist es schon Heilig Abend?
+              Baum Geschmückt? Essen läuft?
+              Alle im Video-Call?
+            </p>
+          </div>
+          <div class="card-body">
+            <a href="#" class="btn btn-primary reset">Auslosung Starten!</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card" id="winner">
+          {% for image in images %}
+            {% if loop.first %}
+              <img class="card-img-top" src="static/uploads/{{ image['filename'] }}" alt="static/uploads/{{ image['filename'] }}">
+            {% endif %}
+          {% endfor %}
+
+
+          <div class="card-body">
+            <h5 class="card-title">Der Gewinner ist <a href="{{ url_for('post', post_code=win['code']) }}">{{ win['name'] }}</a></h5>
+            <a href="{{ url_for('post', post_code=win['code']) }}"><span class="badge badge-success">{{ win['name'] }}</span> <span class="badge badge-danger">{{ win['code'] }}</span></a></br>
+            <p class="card-text">
+              Glückunsch und für alle anderen Teilnehmer - mehr Glück nächstes Jahr.
+              Wo mag unsere Reise 2023 wohl hin gehen?</br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+
 {% endblock %}
