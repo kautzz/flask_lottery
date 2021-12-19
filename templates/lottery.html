@@ -50,11 +50,10 @@
 
 
           <div class="card-body">
+            <a href="{{ url_for('post', post_code=win['code']) }}"><span class="badge badge-success">{{ win['name'] }}</span> <span class="badge badge-danger">{{ win['code'] }}</span></a></br></br>
             <h5 class="card-title">Der Gewinner ist <a href="{{ url_for('post', post_code=win['code']) }}">{{ win['name'] }} ♥</a></h5>
-            <a href="{{ url_for('post', post_code=win['code']) }}"><span class="badge badge-success">{{ win['name'] }}</span> <span class="badge badge-danger">{{ win['code'] }}</span></a></br>
             <p class="card-text">
-              Glückunsch und für alle anderen Teilnehmer - mehr Glück nächstes Jahr.
-              Wo mag unsere Reise 2023 wohl hin gehen?</br>
+              Glückunsch! Wo mag unsere Reise im {{ win['start'] }} bis {{ win['until'] }} 2023 wohl hin gehen?</br>
             </p>
           </div>
         </div>

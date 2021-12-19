@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{% block title %} Neues Reiseziel Einreichen {% endblock %}</h1>
+<h1>{% block title %}Ticket Einlösen{% endblock %}</h1>
 
 <form method="post" enctype="multipart/form-data">
     <div class="form-group">
@@ -12,7 +12,7 @@
     </div>
 
     <div class="form-group">
-        <label for="name">Dein Name?</label>
+        <label for="name">Wie ist dein Name?</label>
         <input type="text" name="name"
                placeholder="Name" class="form-control"
                value="{{ request.form['name'] }}"></input>
@@ -33,18 +33,60 @@
     </div>
 
     <div class="form-group">
+      <label for="start">In welchem Zeitraum soll die Reise stattfinden?
+        Zb. zum Skifahren in die Alpen von Januar bis März...</label>
+
+      <div class="form-row">
+        <div class="col">
+          <select class="form-control" name="start" value="{{ request.form['start'] }}">
+            <option>---</option>
+            <option>Januar</option>
+            <option>Februar</option>
+            <option>März</option>
+            <option>April</option>
+            <option>Mai</option>
+            <option>Juni</option>
+            <option>Juli</option>
+            <option>August</option>
+            <option>September</option>
+            <option>Oktober</option>
+            <option>November</option>
+            <option>Dezember</option>
+          </select>
+        </div>
+        <div class="col">
+          <select class="form-control" name="until" value="{{ request.form['until'] }}">
+            <option>---</option>
+            <option>Januar</option>
+            <option>Februar</option>
+            <option>März</option>
+            <option>April</option>
+            <option>Mai</option>
+            <option>Juni</option>
+            <option>Juli</option>
+            <option>August</option>
+            <option>September</option>
+            <option>Oktober</option>
+            <option>November</option>
+            <option>Dezember</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
         <label for="content">Warum dort hin? Was möchtest du da machen?</label>
         <textarea name="content" placeholder="Wieso"
                   class="form-control">{{ request.form['content'] }}</textarea>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="padding-bottom: 1em;">
       <label for="formFileMultiple" class="form-label">Lade ein paar schöne Bilder vom Ziel hoch!</label>
-      <input class="form-control" type="file" id="formFileMultiple" name="files[]" multiple value="{{ request.files['file'] }}"/>
+      <input class="form-control" style="height: 100%;" type="file" id="formFileMultiple" name="files[]" multiple value="{{ request.files['file'] }}"/>
     </div>
 
     <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Einlösen</button>
     </div>
 </form>
 {% endblock %}

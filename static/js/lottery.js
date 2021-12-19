@@ -13,7 +13,6 @@ function createTimer() {
 
   var lotterydate = new Date('2021-12-24');
   var today = new Date().getTime();
-  // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   if(today <= lotterydate.getTime()){
       console.log(lotterydate.getTime());
       console.log(today);

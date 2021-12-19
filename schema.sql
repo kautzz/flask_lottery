@@ -9,7 +9,9 @@ CREATE TABLE posts (
     name TEXT NOT NULL,
     country TEXT NOT NULL,
     city TEXT NOT NULL,
-    content TEXT NOT NULL
+    content TEXT NOT NULL,
+    start TEXT NOT NULL,
+    until TEXT NOT NULL
 );
 
 CREATE TABLE tickets (

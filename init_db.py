@@ -8,8 +8,8 @@ with open('schema.sql') as f:
 
 cur = connection.cursor()
 
-cur.execute("INSERT INTO posts (code, name, country, city, content) VALUES (?, ?, ?, ?, ?)",
-            ('000000', 'Martin', 'Spanien', 'Alfinach / GARAGE', 'Zum testen der APP')
+cur.execute("INSERT INTO posts (code, name, country, city, content, start, until) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            ('000000', 'Martin', 'Spanien', 'Alfinach / GARAGE', 'Zum testen der APP', 'April', 'August')
             )
 
 cur.execute("INSERT INTO images (code, filename) VALUES (?, ?)",

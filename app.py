@@ -111,9 +111,11 @@ def create():
 		country = request.form['country']
 		city    = request.form['city']
 		content = request.form['content']
+		start = request.form['start']
+		until = request.form['until']
 		files	= request.files.getlist('files[]')
 
-		if not code or not name or not country or not city or not content:
+		if not code or not name or not country or not city or not content or not start or not until:
 			flash('Please fill out all fields!')
 		else:
 
@@ -138,7 +140,7 @@ def create():
 					print(tickets[s]['ticket_id'], file=sys.stderr)
 					#conn = get_db_connection()
 					conn = get_db_connection()
-					conn.execute('INSERT INTO posts (code, name, country, city, content) VALUES (?, ?, ?, ?, ?)',(code, name, country, city, content))
+					conn.execute('INSERT INTO posts (code, name, country, city, content, start, until) VALUES (?, ?, ?, ?, ?, ?, ?)',(code, name, country, city, content, start, until))
 					conn.execute('UPDATE tickets SET valid = 0 WHERE ticket_id = ?',(code,))
 
 					for file in files:
