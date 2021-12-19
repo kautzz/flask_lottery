@@ -1,9 +1,6 @@
-const countdownArea = document.querySelector('.countdown');
-const numbersArea = document.querySelector('.numbers');
 const resetBtn = document.querySelector('.reset');
 let interval;
 let count = 0;
-const height = countdownArea.getBoundingClientRect().height;
 
 // start the timer when page loads
 //createTimer();
@@ -14,7 +11,11 @@ resetBtn.addEventListener('click', createTimer);
 // create the interval that creates the timer
 function createTimer() {
   document.getElementById('finalimg').style.display = 'none';
-  document.getElementById('counter').style.visibility = 'visible';
+  // document.getElementById('counter').style.visibility = 'visible';
+  document.getElementById('counter').style.display = 'block';
+  countdownArea = document.querySelector('.countdown');
+  numbersArea = document.querySelector('.numbers');
+  height = countdownArea.getBoundingClientRect().height;
 
   clearInterval(interval);
   count = 0;

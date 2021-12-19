@@ -47,7 +47,8 @@ h1 {
 }
 
 #counter {
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
 }
 
 #countdown_hidden {
