@@ -10,6 +10,17 @@ resetBtn.addEventListener('click', createTimer);
 
 // create the interval that creates the timer
 function createTimer() {
+
+  var lotterydate = new Date('2021-12-24');
+  var today = new Date().getTime();
+  // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  if(today <= lotterydate.getTime()){
+      console.log(lotterydate.getTime());
+      console.log(today);
+      alert('Es ist noch nicht Heilig-Abend!!! 🧐👆☠️🤨');
+      return
+  }
+
   document.getElementById('finalimg').style.display = 'none';
   // document.getElementById('counter').style.visibility = 'visible';
   document.getElementById('counter').style.display = 'block';
