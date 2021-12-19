@@ -153,7 +153,7 @@ def create():
 					conn.close()
 
 
-					return redirect(url_for('posts'))
+					return redirect(url_for('post', post_code=code))
 			flash('Invalid ticket code!')
 	return render_template('create.html')
 
