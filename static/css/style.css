@@ -67,3 +67,7 @@ h1 {
 #countbtn {
   display: 'block'
 }
+
+.card {
+  margin-bottom: 1em;
+}
