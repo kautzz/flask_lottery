@@ -46,5 +46,5 @@ function createTimer() {
       document.getElementById('winner').style.display = 'block';
       document.getElementById("countbtn").style.display = 'none';      // document.getElementById('count').style.visibility = 'hidden';
     }
-  }, 100);
+  }, 1000);
 }
